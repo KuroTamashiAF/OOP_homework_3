@@ -31,6 +31,8 @@ public class Main {
         System.out.println("------------------------------------");
         //humanItem.CheckIfTheWardropeIsOpen(wardrope1);
         humanItem.takeItemInWardrope(human1,"bbbb", wardrope1);
+        humanItem.takeItemInWardrope(human1,"pen", wardrope1);
+
 
         humanItem.ShowInventory(human1);
         System.out.println("------------------------------------");
