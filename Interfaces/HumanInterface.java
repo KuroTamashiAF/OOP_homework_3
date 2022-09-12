@@ -14,4 +14,6 @@ public interface HumanInterface {
 
     void takeItemInWardrope(Human human, String nameItem, Wardrope wardrope);
 
+    void ShowWardrope (Wardrope eWardrope);
+
 }

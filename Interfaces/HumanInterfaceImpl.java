@@ -2,6 +2,7 @@ package Interfaces;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -57,6 +58,7 @@ public class HumanInterfaceImpl implements HumanInterface {
 
     @Override
     public void ShowInventory(Human human) {
+        System.out.println("on Human:");
         for (Items item : HumanWithItems.get(human)) {
             System.out.println(item);
         }
@@ -64,16 +66,29 @@ public class HumanInterfaceImpl implements HumanInterface {
 
     @Override
     public void takeItemInWardrope(Human human, String nameItem, Wardrope wardrope) {
+
+        int index = 0;
         for (Items item : HumanWithItems.get(human)) {
             if (item.getName() == nameItem) {
-                HumanWithItems.get(human).remove(item);
-                wardrope.getVolume().add(item);
+                break;
             } else {
-                System.out.println("you don't have this item");
+                index++;
             }
-
         }
+        wardrope.getVolume().add(HumanWithItems.get(human).get(index));
+        HumanWithItems.get(human).remove(index);
 
+    }
+
+    @Override
+    public void ShowWardrope(Wardrope eWardrope) {
+        System.out.println("In Wardrope:");
+        for (Items item : eWardrope.getVolume()) {
+            System.out.println(item);
+            
+        }
+        
+        
     }
 
 }
