@@ -6,7 +6,13 @@ import ObjectClasses.Wardrope;
 
 public interface HumanInterface  {
 
-public void CheckIfTheWardropeIsOpen(Wardrope wardrope);
+void TakeItem( Human human, Items item);
+
+void CheckIfTheWardropeIsOpen(Wardrope wardrope);
+
+void ShowInventory(Human human);
+
+
     
     
 }

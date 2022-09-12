@@ -2,6 +2,7 @@ package Interfaces;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -32,7 +33,7 @@ public class HumanInterfaceImpl implements HumanInterface {
                 case "no":
                     System.out.println("Closet is closed");
                     break;
-                case default: 
+                case default:
                     System.out.println("Enter yes/no");
                     break;
 
@@ -41,4 +42,25 @@ public class HumanInterfaceImpl implements HumanInterface {
         }
 
     }
+
+    @Override
+    public void TakeItem(Human human, Items item) {
+        if (HumanWithItems.containsKey(human)) {
+            HumanWithItems.get(human).add(item);
+        } else {
+            List<Items> foradding = new ArrayList<>();
+            foradding.add(item);
+            HumanWithItems.put(human, (ArrayList<Items>) foradding);
+        }
+
+    }
+
+    @Override
+    public void ShowInventory(Human human) {
+        for (Items item : HumanWithItems.get(human)) {
+         System.out.println(item);
+        }
+    }
+
+    
 }

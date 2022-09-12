@@ -5,7 +5,7 @@ import java.util.List;
 
 import ObjectClasses.Items;
 
-public interface IntemsInterface {
+public interface ItemsInterface {
     List<Items> ListOfItemsForHuman = new ArrayList<>();
     
 }
