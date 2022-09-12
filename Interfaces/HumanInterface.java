@@ -6,6 +6,7 @@ import ObjectClasses.Wardrope;
 
 public interface HumanInterface  {
 
-    void CheckIfTheWardropeIsOpen ();
+public void CheckIfTheWardropeIsOpen(Wardrope wardrope);
+    
     
 }
