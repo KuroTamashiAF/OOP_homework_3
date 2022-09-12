@@ -7,7 +7,7 @@ public class Wardrope {
     private static int idSequence = 1;
     private int volume;
     private int id;
-    private boolean OpenWardrope;
+    private boolean OpenWardrope = false;
 
     public Wardrope(int vol) {
         this.volume = vol;
@@ -19,6 +19,10 @@ public class Wardrope {
     public int getVolume() {
         return volume;
     }
-
-
+    public boolean getwardropeIsOpen(){
+     return this.OpenWardrope;
+    }
+    public void setOpenWardrope(boolean openWardrope) {
+        OpenWardrope = openWardrope;
+    }
 }
