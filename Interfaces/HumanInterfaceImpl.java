@@ -58,9 +58,22 @@ public class HumanInterfaceImpl implements HumanInterface {
     @Override
     public void ShowInventory(Human human) {
         for (Items item : HumanWithItems.get(human)) {
-         System.out.println(item);
+            System.out.println(item);
         }
     }
 
-    
+    @Override
+    public void takeItemInWardrope(Human human, String nameItem, Wardrope wardrope) {
+        for (Items item : HumanWithItems.get(human)) {
+            if (item.getName() == nameItem) {
+                HumanWithItems.get(human).remove(item);
+                wardrope.getVolume().add(item);
+            } else {
+                System.out.println("you don't have this item");
+            }
+
+        }
+
+    }
+
 }

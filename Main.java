@@ -13,15 +13,18 @@ public class Main {
 
 
 
-        Wardrope wardrope1 = new Wardrope(10);
+        Wardrope wardrope1 = new Wardrope();
         HumanInterface humanItem = new HumanInterfaceImpl();
         //HumanItem.CheckIfTheWardropeIsOpen(wardrope1);
 
         humanItem.TakeItem(human1, item1);
         humanItem.TakeItem(human1, item2);
         humanItem.TakeItem(human1, item3);
-        humanItem.CheckIfTheWardropeIsOpen(wardrope1);
-
+        //humanItem.ShowInventory(human1);
+        //humanItem.CheckIfTheWardropeIsOpen(wardrope1);
+        humanItem.takeItemInWardrope(human1,"pen", wardrope1);
         humanItem.ShowInventory(human1);
+
+        
     }
 }
